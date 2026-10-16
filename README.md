@@ -18,6 +18,20 @@ Ein Voice-Server für das TeamSpeak-3-Protokoll, neu geschrieben in Rust. Passen
 
 ## Docker
 
+Fertige Images baut die GitHub Action [Docker image](.github/workflows/docker.yml) bei jedem Push auf `main` und bei Tags `v*` und veröffentlicht sie in der GitHub Container Registry:
+
+```bash
+docker pull ghcr.io/sh1su/rustspeak-server:latest
+```
+
+```bash
+docker run -d --name rustspeak -p 9987:9987/udp -p 9987:9987/tcp -p 10011:10011 -p 10013:10013 -v rustspeak-data:/data ghcr.io/sh1su/rustspeak-server:latest
+```
+
+Tags: `latest` (main), `1.2.3` und `1.2` (bei Tag `v1.2.3`), `sha-<commit>`.
+
+Mit Compose (nimmt das fertige Image; `docker compose up -d --build` baut stattdessen selbst):
+
 ```bash
 docker compose up -d
 ```
