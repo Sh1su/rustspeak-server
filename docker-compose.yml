@@ -1,7 +1,7 @@
 services:
   rustspeak:
+    image: ghcr.io/sh1su/rustspeak-server:latest
     build: .
-    image: rustspeak-server
     restart: unless-stopped
     ports:
       - "9987:9987/udp"   # voice
