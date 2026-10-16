@@ -1,0 +1,5 @@
+/target
+*.json.bak
+ts3server_state.json
+identity.txt
+.DS_Store
