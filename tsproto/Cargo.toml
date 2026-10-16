@@ -1,0 +1,18 @@
+[package]
+name = "tsproto"
+version = "0.1.0"
+edition = "2021"
+description = "TeamSpeak 3 voice protocol (packets, crypto, handshake, reliable command transport)"
+
+[dependencies]
+anyhow.workspace = true
+rand.workspace = true
+base64.workspace = true
+sha1.workspace = true
+sha2 = "0.10"
+aes = "0.8"
+eax = "0.5"
+p256 = { version = "0.13", features = ["ecdsa", "ecdh"] }
+curve25519-dalek = { version = "4", features = ["rand_core"] }
+num-bigint = { version = "0.4", features = ["rand"] }
+tracing.workspace = true

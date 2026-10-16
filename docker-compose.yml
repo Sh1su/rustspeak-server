@@ -1,0 +1,15 @@
+services:
+  rustspeak:
+    build: .
+    image: rustspeak-server
+    restart: unless-stopped
+    ports:
+      - "9987:9987/udp"   # voice
+      - "9987:9987/tcp"   # video relay (screen sharing / webcams)
+      - "10011:10011/tcp" # ServerQuery
+      - "10013:10013/tcp" # bot interface
+    volumes:
+      - rustspeak-data:/data
+
+volumes:
+  rustspeak-data:
